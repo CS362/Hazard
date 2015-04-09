@@ -1,0 +1,14 @@
+//set up new git repository
+git init
+git remote add origin https://github.com/CS362/Hazard
+git pull origin master
+
+
+
+//pull repositor
+git pull origin master
+
+//add to repository
+git add . 
+git commit
+git push
