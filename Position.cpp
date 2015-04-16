@@ -34,3 +34,18 @@ double Position::getLongitude()
 {
 	return Longitude;
 }
+
+//overload =(assignment) operator
+
+Position& Position::operator=(const Position& right)
+{
+	if(this == &right)
+		return *this;
+
+	Latitude = right.getLatitude();
+	Longitude = right.getLongitude();
+
+	return *this;
+	
+
+}
