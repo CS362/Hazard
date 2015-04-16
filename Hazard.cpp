@@ -1,7 +1,36 @@
 #include "Hazard.h"
 #include<string>
+#include<iostream>
 
 using namespace std;
+Hazard::Hazard()
+{
+	Position newPos;
+	int latitude, longitude;
+	cout << "Enter the radius of the of the hazard: ";
+	cin  >> radius;
+	
+	
+	//make function to display table of options for types of hazards
+	cout << endl << "Enter the type of the hazard: ";
+	//displayList of hazard types
+	cin  >> type;
+	
+	cout << "Enter the latitude of the hazard: ";
+	cin  >> latitude;
+	
+	cout << "Enter the longitude of the hazard: ";
+	cin  >> longitude;
+	
+	
+	/* may need to to change set names. */
+	newPos.set_Latitude(latitde);   
+	newPos.set_Latitude(longitude);
+	
+	//operator needs to be overloaded
+	hazard_position = newPos;
+}
+
 void Hazard::set_hazard_id(int hazard_id)
 {
 	ID = hazard_id;
