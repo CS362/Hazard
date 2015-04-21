@@ -1,10 +1,24 @@
 #include "Position.h"
+#include <cstdlib>
+
+using namespace std;
 
 //constructors
 Position::Position()
 {
-	Latitude = 0;
-	Longitude = 0;
+	int rand_lat = rand() % 181;
+	int rand_long = rand() % 361;
+	if(rand_lat > 90)
+	{
+		rand_lat = rand_lat /2 *-1;
+	}
+	if(rand_long >180)
+	{
+		rand_long = rand_long/2 *-1;
+	}
+
+	Latitude = rand_lat;
+	Longitude = rand_long;
 }
 
 Position::Position(double x_long, double y_lat)
@@ -33,19 +47,4 @@ double Position::getLatitude()
 double Position::getLongitude()
 {
 	return Longitude;
-}
-
-//overload =(assignment) operator
-
-Position& Position::operator=(const Position& right)
-{
-	if(this == &right)
-		return *this;
-
-	Latitude = right.getLatitude();
-	Longitude = right.getLongitude();
-
-	return *this;
-	
-
 }
