@@ -1,5 +1,5 @@
 #include <iostream>
-#include "HazardAreas.h"
+#include "HazardAreas.H"
 int main(int argc, char** argv) {
 	cout<<"Creating Hazard Areas"<<endl;
 	HazardAreas myAreas;
