@@ -24,8 +24,8 @@ Hazard::Hazard()
 	
 	
 	/* may need to to change set names. */
-	newPos.set_Latitude(latitde);   
-	newPos.set_Latitude(longitude);
+	newPos.setLatitude(latitde);   
+	newPos.setLongitude(longitude);
 	
 	//operator needs to be overloaded
 	hazard_position = newPos;
