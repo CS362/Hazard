@@ -21,6 +21,7 @@ class Hazard
 		string get_type();
 		Position get_position();
 		void set_position(Position);
+		ostream& operator<<(ostream& os, const Hazard&);
 };
 
 #endif

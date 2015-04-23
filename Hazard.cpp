@@ -64,3 +64,39 @@ string Hazard::get_type()
 Position Hazard::get_position(){
 	return hazard_position;
 }
+
+
+ostream& operator<<(ostream& os, const Hazard& haz)
+{
+	os << "Showing information about hazard: " << haz.get_hazard_ID() << endl
+	   << "Radius: " << haz.get_radius() << endl
+	   << "Type: " << haz.get_type() << endl
+	   << "Position: " << haz.get_Position() << endl;
+	   
+	   return os;
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
