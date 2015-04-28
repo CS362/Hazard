@@ -1,5 +1,6 @@
 #include "Position.h"
 #include <cstdlib>
+#include <iostream>
 
 using namespace std;
 
@@ -50,13 +51,15 @@ double Position::getLongitude()
 }
 
 //overloaded operators
-void Position::operator=(const Position &p)
+Position& Position::operator=(const Position& p)
 {
-	Latitude = p.getLatitude();
-	Longitude = p.getLongitude();
+	Latitude = p.Latitude;
+	Longitude = p.Longitude;
+
+	return *this;
 }
 
-ostream& Position::operator<<(ostream& out, Position &p)
+ostream& operator<<(ostream& out, Position &p)
 {
 	out << "Latitude:\t" << p.getLatitude() << endl
 	    << "Longitude:\t" << p.getLongitude() << endl;
