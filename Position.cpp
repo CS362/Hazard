@@ -6,15 +6,15 @@ using namespace std;
 //constructors
 Position::Position()
 {
-	int rand_lat = rand() % 181;
-	int rand_long = rand() % 361;
+	double rand_lat = rand() % 181;
+	double rand_long = rand() % 361;
 	if(rand_lat > 90)
 	{
-		rand_lat = rand_lat /2 *-1;
+		rand_lat = rand_lat /2.0 *-1;
 	}
 	if(rand_long >180)
 	{
-		rand_long = rand_long/2 *-1;
+		rand_long = rand_long/2.0 *-1;
 	}
 
 	Latitude = rand_lat;
@@ -47,4 +47,18 @@ double Position::getLatitude()
 double Position::getLongitude()
 {
 	return Longitude;
+}
+
+//overloaded operators
+void Position::operator=(const Position &p)
+{
+	Latitude = p.getLatitude();
+	Longitude = p.getLongitude();
+}
+
+ostream& Position::operator<<(ostream& out, Position &p)
+{
+	out << "Latitude:\t" << p.getLatitude() << endl
+	    << "Longitude:\t" << p.getLongitude() << endl;
+	return out;
 }
